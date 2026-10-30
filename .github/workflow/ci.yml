@@ -20,4 +20,4 @@ jobs:
           extensions: mbstring, json
  
       - name: Lancer les tests unitaires
-        run: php tests/run_tests.php
+        run: php tests/run.php
