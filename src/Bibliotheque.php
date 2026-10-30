@@ -83,7 +83,4 @@ public function statistiques(): array
         'disponibles' => $disponibles,
         'taux' => $total > 0 ? round($disponibles / $total * 100, 1) : 0.0,
     ];
-}public function compter(): int
-{
-    return count($this->livres);   
 }}
