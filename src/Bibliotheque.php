@@ -68,4 +68,19 @@ class Bibliotheque
         }
         return $resultats;
     }
-}
+
+public function statistiques(): array
+{
+    $total = $this->compter();
+    $disponibles = 0;
+    foreach ($this->tous() as $livre) {
+        if ($livre->estDisponible()) {
+            $disponibles++;
+        }
+    }
+    return [
+        'total' => $total,
+        'disponibles' => $disponibles,
+        'taux' => $total > 0 ? round($disponibles / $total * 100, 1) : 0.0,
+    ];
+}}
